@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    >
+
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar" /> -->
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_below="@id/app_bar"
+    android:id="@+id/linearLayout"
+    android:background="@color/white"
+    >
+
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Name"
+        android:id="@+id/Name"
+        android:padding="10dp"
+        android:textIsSelectable="false"
+        android:textColorHighlight="@android:color/black"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="15"
+        android:padding="10dp"
+        android:id="@+id/Enter_Name"
+        android:background="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Branch"
+        android:id="@+id/Branch"
+        android:padding="10dp"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:entries="@array/branch_array"
+        android:prompt="@string/branch_prompt"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/Class"
+        android:id="@+id/Class"
+        android:padding="10dp"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner2"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/class_prompt"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/ok"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:layout_gravity="center_vertical" />
+
+    <View
+        android:id="@+id/hori_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.5dp"
+        android:background="#C0C0C0"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/departments_preferences"
+        android:id="@+id/dept_prio"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:clickable="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        />
+
+    <View
+        android:id="@+id/hori_line2"
+        android:layout_width="fill_parent"
+        android:layout_height="1.5dp"
+        android:background="#C0C0C0"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/push_notification_preferences"
+        android:id="@+id/push_prio"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:clickable="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        />
+
+    <View
+        android:id="@+id/hori_line3"
+        android:layout_width="fill_parent"
+        android:layout_height="1.5dp"
+        android:background="#C0C0C0"
+        />
+
+
+</LinearLayout>
