@@ -4,69 +4,63 @@ import com.unitech.notapp.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.io.File;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- *
- * @see SystemUiHider
- */
-public class FullscreenActivity extends Activity {
+
+public class FullscreenActivity extends Activity
+{
 
     PhotoViewAttacher mAttacher;
-    /**
-     * Whether or not the system UI should be auto-hidden after
-     * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
-     */
+
     private static final boolean AUTO_HIDE = true;
 
-    /**
-     * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
-     * user interaction before hiding the system UI.
-     */
+
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
 
-    /**
-     * If set, will toggle the system UI visibility upon interaction. Otherwise,
-     * will show the system UI visibility upon interaction.
-     */
+
     private static final boolean TOGGLE_ON_CLICK = true;
 
-    /**
-     * The flags to pass to {@link SystemUiHider#getInstance}.
-     */
+
     private static final int HIDER_FLAGS = SystemUiHider.FLAG_HIDE_NAVIGATION;
 
-    /**
-     * The instance of the {@link SystemUiHider} for this activity.
-     */
+
     private SystemUiHider mSystemUiHider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_fullscreen);
-        setupActionBar();
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final ImageView contentView = (ImageView) findViewById(R.id.fullscreen_content);
 
+        Toast.makeText(getBaseContext(), Environment.getExternalStorageDirectory().toString(), Toast.LENGTH_SHORT).show();
+        contentView.setImageURI(Uri.fromFile(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "child.jpg")));
 
         //FOR FUTURE REFERENCE
-        Drawable bitmap = getResources().getDrawable(R.drawable.child);
-        contentView.setImageDrawable(bitmap);
+       // Drawable bitmap = getResources().getDrawable(R.drawable.child);
+       // contentView.setImageDrawable(bitmap);
 
         // Attach a PhotoViewAttacher, which takes care of all of the zooming functionality.
         mAttacher = new PhotoViewAttacher(contentView);
@@ -75,6 +69,7 @@ public class FullscreenActivity extends Activity {
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
+        /*
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
         mSystemUiHider.setup();
         mSystemUiHider
@@ -127,7 +122,7 @@ public class FullscreenActivity extends Activity {
             }
         });
 
-
+        */
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
@@ -135,6 +130,7 @@ public class FullscreenActivity extends Activity {
         //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
+    /*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -145,9 +141,7 @@ public class FullscreenActivity extends Activity {
         delayedHide(100);
     }
 
-    /**
-     * Set up the {@link android.app.ActionBar}, if the API is available.
-     */
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void setupActionBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -175,11 +169,7 @@ public class FullscreenActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
+
     View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -198,12 +188,10 @@ public class FullscreenActivity extends Activity {
         }
     };
 
-    /**
-     * Schedules a call to hide() in [delay] milliseconds, canceling any
-     * previously scheduled calls.
-     */
+
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+    */
 }

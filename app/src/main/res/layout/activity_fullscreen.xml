@@ -7,14 +7,18 @@
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
 
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fullscreen_content"
         android:keepScreenOn="true"
+        android:layout_gravity="center"
         android:src="@drawable/child"
-        android:layout_gravity="center" />
+        />
 
 
     <!-- This FrameLayout insets its children based on system windows using

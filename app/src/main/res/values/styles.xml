@@ -5,9 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="android:colorPrimary">@color/primary_color</item>
         <item name="android:textColor">@color/primary_dark_material_dark</item>
+        <item name="android:titleTextStyle">@color/white</item>
     </style>
-    
-    
+
     <!--<style name="Button" parent="Widget.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
     </style> -->

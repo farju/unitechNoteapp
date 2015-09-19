@@ -28,7 +28,7 @@
 
     <Space
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/timestamp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

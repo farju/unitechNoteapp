@@ -90,19 +90,17 @@ public class NoticesActivity extends ActionBarActivity {
         ch1_1.setTag(null);
         list2.add(ch1_1);
 
+        ExpandListChild ch1_2 = new ExpandListChild();
+        ch1_2.setName("A movie");
+        ch1_2.setTag(null);
+        list2.add(ch1_2);
+
         gru1.setItems(list2);
         list2 = new ArrayList<ExpandListChild>();
 
-        ExpandListGroup gru2 = new ExpandListGroup();
-        gru2.setName("Action");
-
-        ExpandListChild ch2_1 = new ExpandListChild();
-        ch2_1.setName("A movie");
-        ch2_1.setTag(null);
-        list2.add(ch2_1);
 
         list.add(gru1);
-        list.add(gru2);
+
 
         return list;
     }
