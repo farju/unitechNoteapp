@@ -59,7 +59,7 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        name = (EditText)findViewById(R.id.Enter_Name);
+        //name = (EditText)findViewById(R.id.Enter_Name);
         spinner=(Spinner)findViewById(R.id.spinner);
         spinner2=(Spinner)findViewById(R.id.spinner2);
 
@@ -95,8 +95,8 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
             @Override
             public void onClick(View v)
             {
-                editor.putString("name", name.getText().toString());
-                editor.commit();
+                //editor.putString("name", name.getText().toString());
+                //editor.commit();
                 editor.putInt("bchoice", bchoice);
                 editor.commit();
                 editor.putInt("cchoice", cchoice);
@@ -118,7 +118,7 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
             }
         });
 
-        name.setText(sharedPreferences.getString("name",""));
+        //name.setText(sharedPreferences.getString("name",""));
         spinner.setSelection(sharedPreferences.getInt("bchoice", 0));
         spinner2.setSelection(sharedPreferences.getInt("cchoice", 0));
 

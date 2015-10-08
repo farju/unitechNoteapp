@@ -8,6 +8,7 @@
         <item name="android:titleTextStyle">@color/white</item>
     </style>
 
+
     <!--<style name="Button" parent="Widget.AppCompat.Button">
         <item name="android:textAllCaps">false</item>
     </style> -->
@@ -38,5 +39,9 @@
     <style name="MyCustomTheme.OverFlow">
         <item name="android:src">@drawable/ic_overflow</item>
     </style> -->
+    
+    <style name="MyCustomToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily"></item>
+    </style>
 
 </resources>

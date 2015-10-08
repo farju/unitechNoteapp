@@ -1,10 +1,14 @@
 package com.unitech.notapp;
 
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
+import android.preference.SwitchPreference;
 
 /**
  * Created by sarang on 11/9/15.
@@ -28,7 +32,6 @@ public class PushNotificationPreferences extends PreferenceActivity
         {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pprefs);
-
         }
     }
 }

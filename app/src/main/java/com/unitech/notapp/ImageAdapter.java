@@ -21,16 +21,18 @@ public class ImageAdapter extends BaseAdapter
     // references to our images
     //public static Integer[] mThumbIds = new Integer[11];
 
-    public static Integer[] mThumbIds = {
+    public static Integer[] mThumbIds;
+
+    public static Integer[] reference = {
             R.drawable.cse,R.drawable.it,
             R.drawable.eln,R.drawable.ele,
             R.drawable.civ,R.drawable.mech,
-            R.drawable.dmin,R.drawable.schlshp,
-            R.drawable.exam,R.drawable.rector,
-            R.drawable.sports,R.drawable.tpo
+            R.drawable.schlshp,R.drawable.rector,
+            R.drawable.exam, R.drawable.sports,
+            R.drawable.tpo
     };
 
-    String[] deptNames = {"CSE", "IT", "ELN", "ELE", "CIV", "MECH", "Scholarship_Section", "Rector", "Exam_Cell", "Sports", };
+    public static String[] deptNames = {"CSE", "IT", "ELN", "ELE", "CIV", "MECH", "Scholarship_Section", "Rector", "Exam_Cell", "Sports", "Tpo" };
 
     public ImageAdapter(Context c)
     {

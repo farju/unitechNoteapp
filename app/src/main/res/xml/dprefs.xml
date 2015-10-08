@@ -61,8 +61,16 @@
         android:defaultValue="true"
         android:background="@color/secondary_color"
         />
+
     <SwitchPreference
-        android:key="TPO"
+        android:key="Admin"
+        android:title="Admin"
+        android:defaultValue="true"
+        android:background="@color/secondary_color"
+        />
+
+    <SwitchPreference
+        android:key="Tpo"
         android:title="TPO"
         android:defaultValue="true"
         android:background="@color/secondary_color"

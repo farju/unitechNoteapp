@@ -4,34 +4,23 @@ import com.unitech.notapp.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.io.File;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 
-public class FullscreenActivity extends Activity
-{
+public class MainNoticeActivity extends Activity {
 
     PhotoViewAttacher mAttacher;
+
 
     private static final boolean AUTO_HIDE = true;
 
@@ -50,26 +39,29 @@ public class FullscreenActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fullscreen);
+
+        setContentView(R.layout.activity_main_notice);
+        //setupActionBar();
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final ImageView contentView = (ImageView) findViewById(R.id.fullscreen_content);
 
-        Toast.makeText(getBaseContext(), Environment.getExternalStorageDirectory().toString(), Toast.LENGTH_SHORT).show();
-        contentView.setImageURI(Uri.fromFile(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "child.jpg")));
+        //final ImageView contentView = (ImageView) findViewById(R.id.fullscreen_content);
+
+
 
         //FOR FUTURE REFERENCE
-       // Drawable bitmap = getResources().getDrawable(R.drawable.child);
-       // contentView.setImageDrawable(bitmap);
+        Drawable bitmap = getResources().getDrawable(R.drawable.child);
+        contentView.setImageDrawable(bitmap);
 
         // Attach a PhotoViewAttacher, which takes care of all of the zooming functionality.
         mAttacher = new PhotoViewAttacher(contentView);
 
-
-
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
+
         /*
+
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
         mSystemUiHider.setup();
         mSystemUiHider
@@ -122,12 +114,12 @@ public class FullscreenActivity extends Activity
             }
         });
 
-        */
-
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        */
     }
 
     /*
@@ -188,10 +180,11 @@ public class FullscreenActivity extends Activity
         }
     };
 
-
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
     */
+
 }

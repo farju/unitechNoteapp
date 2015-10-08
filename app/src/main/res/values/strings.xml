@@ -35,4 +35,14 @@
     <string name="departments_preferences">Department Preferences</string>
     <string name="push_notification_preferences">Push Notification Preferences</string>
 
+        <string name="title_activity_main_notice">MainNoticeActivity</string>
+        <string name="title_activity_help">Help</string>
+        <string name="title_activity_about">About</string>
+        <string name="Help">    On Install, set your Branch, Class and Department preferences as well as Push Notification Preferences(can be changed later).
+                To select preferences of Departments, just set the switches of the departments of your choices though Settings-> Department Preferences and restart the app. Notices of only selected departments would be received and even the start screen will show the same logos.
+                If you don’t want push notifications for any department, just as Department Preferences , set your Push Notification Preferences through Settings->Push Notification Preferences.
+Note: Only departments selected in Departments Preferences can be set in Push Notification Preferences.
+            For any other grievances feel free to contact
+            sarang@unitechstudios.com
+            manish@unitechstudios.com</string>
 </resources>

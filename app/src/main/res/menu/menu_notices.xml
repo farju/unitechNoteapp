@@ -5,14 +5,11 @@
     tools:context="com.unitech.notapp.NoticesActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/action_refresh"
-        android:title="action_refresh"
+        android:title="Refresh"
         android:icon="@drawable/ic_refresh"
         android:showAsAction="always"
+        app:showAsAction="always"
+
         />
 </menu>

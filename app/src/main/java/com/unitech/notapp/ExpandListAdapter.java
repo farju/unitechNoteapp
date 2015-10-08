@@ -85,7 +85,8 @@ public class ExpandListAdapter extends BaseExpandableListAdapter
 
                     @Override
                     public void onClick(View v) {
-                    Intent intent =new Intent(context,FullscreenActivity.class);
+                        Toast.makeText(context, "manish", Toast.LENGTH_SHORT).show();
+                    Intent intent =new Intent(context,MainNoticeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  ;
                     //intent.putExtra("file_path",PATH);
                     context.startActivity(intent);
                 }

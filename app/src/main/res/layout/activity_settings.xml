@@ -28,6 +28,16 @@
         layout="@layout/app_bar"
         android:id="@+id/app_bar"/>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/innerRel"
+        android:padding="10dp"
+        >
+
+    <!--
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +57,7 @@
         android:padding="10dp"
         android:id="@+id/Enter_Name"
         android:background="@color/white"/>
-
+    -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +65,8 @@
         android:text="@string/Branch"
         android:id="@+id/Branch"
         android:padding="10dp"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        />
 
     <Spinner
         android:layout_width="match_parent"
@@ -138,6 +149,8 @@
         android:layout_height="1.5dp"
         android:background="#C0C0C0"
         />
+
+    </LinearLayout>
 
 
 </LinearLayout>
