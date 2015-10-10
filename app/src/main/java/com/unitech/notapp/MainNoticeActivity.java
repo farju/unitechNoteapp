@@ -1,17 +1,10 @@
 package com.unitech.notapp;
 
-import com.unitech.notapp.util.SystemUiHider;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
 import android.widget.ImageView;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
@@ -31,10 +24,10 @@ public class MainNoticeActivity extends Activity {
     private static final boolean TOGGLE_ON_CLICK = true;
 
 
-    private static final int HIDER_FLAGS = SystemUiHider.FLAG_HIDE_NAVIGATION;
+/*    private static final int HIDER_FLAGS = SystemUiHider.FLAG_HIDE_NAVIGATION;
 
 
-    private SystemUiHider mSystemUiHider;
+    private SystemUiHider mSystemUiHider;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +44,8 @@ public class MainNoticeActivity extends Activity {
 
 
         //FOR FUTURE REFERENCE
-        Drawable bitmap = getResources().getDrawable(R.drawable.child);
+        //TODO: change drawlable to child
+        Drawable bitmap = getResources().getDrawable(R.drawable.ic_launcher);
         contentView.setImageDrawable(bitmap);
 
         // Attach a PhotoViewAttacher, which takes care of all of the zooming functionality.
