@@ -111,9 +111,8 @@ public class MainActivity extends AppCompatActivity
             else
             {
                 //Toast.makeText(getBaseContext(), "Editing Push "+ImageAdapter.deptNames[i]+sp.getBoolean(ImageAdapter.deptNames[i]+""+1,false), Toast.LENGTH_SHORT).show();
-                editor.putBoolean(ImageAdapter.deptNames[i] + "1", false);
+                editor.putBoolean(ImageAdapter.deptNames[i]+"" + 1, false);
                 //Toast.makeText(getBaseContext(), "Edited Push "+ImageAdapter.deptNames[i]+sp.getBoolean(ImageAdapter.deptNames[i]+""+1,false),500).show();
-
             }
         }
         temp.add(R.drawable.dmin);
@@ -179,7 +178,7 @@ public class MainActivity extends AppCompatActivity
                         new AndroidJsonFactory(), null)
                         // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
                         // otherwise they can be skipped
-                        .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                        .setRootUrl("http://10.10.24.151:8080/_ah/api/")
                         .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                             @Override
                             public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
@@ -193,8 +192,10 @@ public class MainActivity extends AppCompatActivity
             }
 
             String msg = "worked!!!";
-            try {
-                if (gcm == null) {
+            try
+            {
+                if (gcm == null)
+                {
                     gcm = GoogleCloudMessaging.getInstance(context);
                 }
                 String regId = gcm.register(SENDER_ID);
@@ -206,7 +207,9 @@ public class MainActivity extends AppCompatActivity
                 // is using accounts.
                 regService.register(regId).execute();
 
-            } catch (IOException ex) {
+            }
+            catch (IOException ex)
+            {
                 ex.printStackTrace();
                 msg = "Error: " + ex.getMessage();
             }
@@ -214,7 +217,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         @Override
-        protected void onPostExecute(String msg) {
+        protected void onPostExecute(String msg)
+        {
             Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             Logger.getLogger("REGISTRATION").log(Level.INFO, msg);
         }

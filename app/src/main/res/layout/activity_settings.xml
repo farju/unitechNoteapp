@@ -84,7 +84,8 @@
         android:text="@string/Class"
         android:id="@+id/Class"
         android:padding="10dp"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        />
 
     <Spinner
         android:layout_width="match_parent"
