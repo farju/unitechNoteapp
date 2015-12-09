@@ -29,7 +29,7 @@
         android:id="@+id/app_bar"/>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -75,6 +75,7 @@
         android:spinnerMode="dropdown"
         android:entries="@array/branch_array"
         android:prompt="@string/branch_prompt"
+        android:layout_below="@+id/Branch"
         />
 
     <TextView
@@ -84,6 +85,7 @@
         android:text="@string/Class"
         android:id="@+id/Class"
         android:padding="10dp"
+        android:layout_below="@+id/spinner"
         android:textColor="@android:color/black"
         />
 
@@ -92,6 +94,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner2"
         android:spinnerMode="dropdown"
+        android:layout_below="@+id/Class"
         android:prompt="@string/class_prompt"
         />
 
@@ -101,57 +104,104 @@
         android:text="Submit"
         android:id="@+id/ok"
         android:padding="10dp"
+        android:layout_below="@id/spinner2"
         android:textAllCaps="false"
-        android:layout_gravity="center_vertical" />
+        android:layout_gravity="center_vertical"
+        />
 
     <View
         android:id="@+id/hori_line"
         android:layout_width="fill_parent"
-        android:layout_height="1.5dp"
+        android:layout_height="1dp"
         android:background="#C0C0C0"
+        android:layout_below="@+id/ok"
         />
 
-    <Button
-        android:layout_width="fill_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/departments_preferences"
-        android:id="@+id/dept_prio"
-        android:background="@android:color/transparent"
-        android:gravity="center_vertical"
-        android:padding="10dp"
-        android:textAllCaps="false"
+        android:id="@+id/deptrel"
         android:clickable="true"
-        android:textSize="@dimen/abc_text_size_medium_material"
-        />
+        android:layout_below="@+id/ok"
+        >
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deptlogo"
+                android:src="@drawable/ic_dept"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:clickable="true"
+            />
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/departments_preferences"
+                android:id="@+id/dept_prio"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:clickable="true"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:layout_toRightOf="@+id/deptlogo"
+                />
+        </RelativeLayout>
 
     <View
         android:id="@+id/hori_line2"
         android:layout_width="fill_parent"
         android:layout_height="1.5dp"
         android:background="#C0C0C0"
+        android:layout_below="@+id/deptrel"
         />
 
-    <Button
-        android:layout_width="fill_parent"
+    <RelativeLayout
+        android:id="@+id/pushrel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/push_notification_preferences"
-        android:id="@+id/push_prio"
-        android:background="@android:color/transparent"
-        android:gravity="center_vertical"
-        android:padding="10dp"
-        android:textAllCaps="false"
+        android:layout_below="@+id/hori_line2"
         android:clickable="true"
-        android:textSize="@dimen/abc_text_size_medium_material"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pushlogo"
+            android:src="@drawable/ic_notifications"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:layout_alignParentStart="true" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/push_notification_preferences"
+            android:id="@+id/push_prio"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:clickable="true"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:layout_toRightOf="@+id/pushlogo"
         />
+
+    </RelativeLayout>
 
     <View
         android:id="@+id/hori_line3"
         android:layout_width="fill_parent"
         android:layout_height="1.5dp"
         android:background="#C0C0C0"
+        android:layout_below="@+id/pushrel"
         />
 
-    </LinearLayout>
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

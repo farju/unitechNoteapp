@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.media.Image;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -24,10 +25,13 @@ import android.text.TextUtils;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,12 +43,12 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
 {
     Toolbar toolbar;
     Spinner spinner,spinner2;
-    Button ok;
+    Button ok,deptButton,pushButton;
+    ImageView deptImage,pushImage;
     EditText name;
-    Button departmentPreferences, pushnotificationpreferences;
     boolean b;
     int bchoice,cchoice,flg=0;
-
+    RelativeLayout departmentPreferences, pushnotificationpreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -80,11 +84,32 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
         cchoice=spinner.getSelectedItemPosition();
 
 
-        departmentPreferences=(Button)findViewById(R.id.dept_prio);
+        departmentPreferences=(RelativeLayout)findViewById(R.id.deptrel);
         departmentPreferences.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+                Toast.makeText(getBaseContext(),"Onclicked",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SettingsActivity.this, DepartmentPreferences.class);
+                startActivity(intent);
+            }
+        });
+
+        deptButton=(Button)findViewById(R.id.dept_prio);
+        deptButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(SettingsActivity.this,DepartmentPreferences.class);
+                startActivity(intent);
+            }
+        });
+
+        deptImage=(ImageView)findViewById(R.id.deptlogo);
+        deptImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SettingsActivity.this,DepartmentPreferences.class);
                 startActivity(intent);
             }
         });
@@ -107,9 +132,19 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
 
 
 
-        pushnotificationpreferences=(Button)findViewById(R.id.push_prio);
-        pushnotificationpreferences.setOnClickListener(new View.OnClickListener()
-        {
+        pushnotificationpreferences=(RelativeLayout)findViewById(R.id.pushrel);
+        pushnotificationpreferences.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getBaseContext(),"Onclicked",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(SettingsActivity.this,PushNotificationPreferences.class);
+                startActivity(intent);
+            }
+        });
+
+        pushButton=(Button)findViewById(R.id.push_prio);
+        pushButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
@@ -118,8 +153,17 @@ public class SettingsActivity extends ActionBarActivity implements AdapterView.O
             }
         });
 
+        pushImage=(ImageView)findViewById(R.id.pushlogo);
+        pushImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(SettingsActivity.this,PushNotificationPreferences.class);
+                startActivity(intent);
+            }
+        });
+
         //name.setText(sharedPreferences.getString("name",""));
-        spinner.setSelection(sharedPreferences.getInt("bchoice", 0));
+        spinner.setSelection(sharedPreferences.getInt("bchoice", 0 ));
         spinner2.setSelection(sharedPreferences.getInt("cchoice", 0));
 
         //sharedPreferences.

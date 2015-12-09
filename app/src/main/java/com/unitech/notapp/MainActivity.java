@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity
 {
     private Toolbar toolbar;
     GridView gridView;
+    String[] depts;
+
+    public static  int flag = 0;
+    public static String[] deptNames = {"cse", "it", "eln", "ele", "civ", "mech", "scholar", "rector", "exam", "sports", "tpo", "admin" };
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -47,14 +51,15 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new GcmRegistrationAsyncTask(this).execute();
+        flag = 0;
+       // new GcmRegistrationAsyncTask(this).execute();
 
         toolbar =(Toolbar)findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(10);
 
         getSupportActionBar().setTitle(" Notapp");
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        //getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         final SharedPreferences sharedPreferences=getSharedPreferences("UserData", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor=sharedPreferences.edit();
@@ -68,8 +73,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, NoticesActivity.class);
-                editor.putInt("ClickedViewPos", position);
-                editor.commit();
+               /* editor.putInt("ClickedViewPos", position);
+                editor.commit();*/
+                intent.putExtra("deptName", depts[position]);
                 startActivity(intent);
             }
         });
@@ -100,6 +106,8 @@ public class MainActivity extends AppCompatActivity
     public void shortlistDepts(SharedPreferences sp)
     {
         ArrayList<Integer> temp = new ArrayList<Integer>();
+        ArrayList<String> temp2 = new ArrayList<String>();
+
         SharedPreferences.Editor editor=sp.edit();
         SwitchPreference switchPreference;
         for(int i = 0; i< 11; i++)
@@ -107,6 +115,7 @@ public class MainActivity extends AppCompatActivity
             if(sp.getBoolean(ImageAdapter.deptNames[i],false))
             {
                 temp.add(ImageAdapter.reference[i]);
+                temp2.add(deptNames[i]);
             }
             else
             {
@@ -115,8 +124,10 @@ public class MainActivity extends AppCompatActivity
                 //Toast.makeText(getBaseContext(), "Edited Push "+ImageAdapter.deptNames[i]+sp.getBoolean(ImageAdapter.deptNames[i]+""+1,false),500).show();
             }
         }
+        temp2.add(deptNames[11]);
         temp.add(R.drawable.dmin);
         ImageAdapter.mThumbIds = temp.toArray(new Integer[temp.size()]);
+        depts = temp2.toArray(new String[temp2.size()]);
 
     }
 
@@ -158,7 +169,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    static class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String>
+   /* static class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String>
     {
         private static Registration regService = null;
         private GoogleCloudMessaging gcm;
@@ -167,26 +178,17 @@ public class MainActivity extends AppCompatActivity
         // TODO: change to your own sender ID to Google Developers Console project number, as per instructions above
         private static final String SENDER_ID = "190715092314";
 
-        public GcmRegistrationAsyncTask(Context context) {
+        public GcmRegistrationAsyncTask(Context context)
+        {
             this.context = context;
         }
 
         @Override
-        protected String doInBackground(Void... params) {
+        protected String doInBackground(Void... params)
+        {
             if (regService == null) {
-                Registration.Builder builder = new Registration.Builder(AndroidHttp.newCompatibleTransport(),
-                        new AndroidJsonFactory(), null)
-                        // Need setRootUrl and setGoogleClientRequestInitializer only for local testing,
-                        // otherwise they can be skipped
-                        .setRootUrl("http://10.10.24.151:8080/_ah/api/")
-                        .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                            @Override
-                            public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest)
-                                    throws IOException {
-                                abstractGoogleClientRequest.setDisableGZipContent(true);
-                            }
-                        });
-                // end of optional local run code
+                Registration.Builder builder = new Registration.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
+                        .setRootUrl("https://notappbackend.appspot.com/_ah/api/");
 
                 regService = builder.build();
             }
@@ -222,5 +224,5 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             Logger.getLogger("REGISTRATION").log(Level.INFO, msg);
         }
-    }
+    }*/
 }

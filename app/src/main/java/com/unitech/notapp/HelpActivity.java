@@ -22,6 +22,9 @@ public class HelpActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(10);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         help=(TextView)findViewById(R.id.help);
         help.setText("\tOn Install, set your Branch, Class and Department preferences as well as Push Notification Preferences(can be changed later).\n\tTo select preferences of Departments, just set the switches of the departments of your choices though Settings-> Department Preferences and restart the app. Notices of only selected departments would be received and even the start screen will show the same logos.\n\tIf you don’t want push notifications for any department, just as Department Preferences , set your Push Notification Preferences through Settings->Push Notification Preferences.\nNote: Only departments selected in Departments Preferences can be set in Push Notification Preferences.\nFor any other grievances feel free to contact\nsarang@unitechstudios.com\nmanish@unitechstudios.com");
         help.setTextSize(16);
@@ -41,19 +44,6 @@ public class HelpActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu (Menu menu)
-    {
-        return false;
     }
 }

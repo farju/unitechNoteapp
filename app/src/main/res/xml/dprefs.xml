@@ -4,75 +4,75 @@
     <SwitchPreference
         android:key="CSE"
         android:title="CSE"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="IT"
         android:title="IT"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="ELN"
         android:title="ELN"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="ELE"
         android:title="ELE"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="CIV"
         android:title="CIV"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="MECH"
         android:title="MECH"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="Scholarship_Section"
         android:title="Scholarship Section"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="Rector"
         android:title="Rector"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="Exam_Cell"
         android:title="Exam Cell"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
     <SwitchPreference
         android:key="Sports"
         android:title="Sports"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
 
     <SwitchPreference
         android:key="Admin"
         android:title="Admin"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
 
     <SwitchPreference
         android:key="Tpo"
         android:title="TPO"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:background="@color/secondary_color"
         />
 

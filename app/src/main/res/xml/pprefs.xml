@@ -3,60 +3,60 @@
     <SwitchPreference
         android:key="CSE1"
         android:title="CSE"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="IT1"
         android:title="IT"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="ELN1"
         android:title="ELN"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="ELE1"
         android:title="ELE"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="CIV1"
         android:title="CIV"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="MECH1"
         android:title="MECH"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="Scholarship_Section1"
         android:title="Scholarship Section"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="Rector1"
         android:title="Rector"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="Exam_cell1"
         android:title="Exam Cell"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
     <SwitchPreference
         android:key="Sports1"
         android:title="Sports"
         android:background="@color/secondary_color"
-        android:defaultValue="true"
+        android:defaultValue="false"
         />
 </PreferenceScreen>
